@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 :root {
   --background: #ffffff;
@@ -23,4 +24,18 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.temple-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.temple-marker-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  border: 2px solid #ffffff;
+  background: #c68e51;
+  box-shadow: 0 2px 8px rgba(21, 21, 21, 0.35);
 }

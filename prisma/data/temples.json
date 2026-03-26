@@ -1,0 +1,158 @@
+{
+  "admin": [
+    {
+      "uuid": "adm-001",
+      "nama": "I Made Wijaya",
+      "email": "admin@desapujungan.bali",
+      "password": "$2b$10$hashedpassword",
+      "role": "admin",
+      "created_at": "2024-01-15T08:00:00Z",
+      "updated_at": "2024-01-15T08:00:00Z"
+    },
+    {
+      "uuid": "adm-002",
+      "nama": "Ni Wayan Sari",
+      "email": "editor@desapujungan.bali",
+      "password": "$2b$10$hashedpassword",
+      "role": "editor",
+      "created_at": "2024-02-01T10:30:00Z",
+      "updated_at": "2024-02-01T10:30:00Z"
+    }
+  ],
+  "kategori_pura": [
+    {
+      "uuid": "kat-001",
+      "nama_kategori": "Pura Kahyangan Jagat",
+      "deskripsi": "Pura yang menjadi tempat ibadah umat Hindu di Bali secara umum dan dapat dikunjungi oleh siapa saja.",
+      "created_at": "2024-01-10T00:00:00Z",
+      "updated_at": "2024-01-10T00:00:00Z"
+    },
+    {
+      "uuid": "kat-002",
+      "nama_kategori": "Pura Swagina",
+      "deskripsi": "Pura yang khusus digunakan untuk kegiatan keagamaan dan upacara adat tertentu.",
+      "created_at": "2024-01-10T00:00:00Z",
+      "updated_at": "2024-01-10T00:00:00Z"
+    },
+    {
+      "uuid": "kat-003",
+      "nama_kategori": "Pura Melanting",
+      "deskripsi": "Pura yang terletak di puncak gunung atau tempat tinggi, tempat bersemadi dan meditasi.",
+      "created_at": "2024-01-10T00:00:00Z",
+      "updated_at": "2024-01-10T00:00:00Z"
+    },
+    {
+      "uuid": "kat-004",
+      "nama_kategori": "Pura Segara",
+      "deskripsi": "Pura yang terletak di tepi pantai atau laut, tempat memuja dewa laut.",
+      "created_at": "2024-01-10T00:00:00Z",
+      "updated_at": "2024-01-10T00:00:00Z"
+    }
+  ],
+  "pura": [
+    {
+      "uuid": "pur-001",
+      "nama_pura": "Pura Penataran Agung",
+      "deskripsi": "<p>Pura Penataran Agung adalah <strong>pura utama</strong> dan induk dari semua pura di Desa Pujungan. Pura ini menjadi pusat kegiatan keagamaan dan upacara adat tertinggi di desa ini.</p><p>Dibangun pada abad ke-11, pura ini memiliki <em>meru</em> bertingkat 11 yang merupakan yang tertinggi di kawasan ini. Arsitektur pura menggambarkan konsep kosmologi Hindu-Bali dengan tiga mandala utama:</p><ul><li><strong>Jaba Pura</strong> - Area terluar untuk persiapan upacara</li><li><strong>Jaba Tengah</strong> - Area untuk upacara madya</li><li><strong>Jeroan</strong> - Area paling suci untuk upacara utama</li></ul><p>Setiap tahun, pura ini menjadi tujuan ribuan umat Hindu yang datang untuk bersembahyang pada hari-hari suci seperti Kuningan dan Galungan.</p>",
+      "alamat": "Jl. Pura Penataran, Dusun Pujungan, Desa Pujungan, Kec. Kubu, Kab. Karangasem",
+      "latitude": -8.2674,
+      "longitude": 115.5167,
+      "foto_url": "/images/pura-penataran-agung.jpg",
+      "kategori_uuid": "kat-001",
+      "created_by": "adm-001",
+      "created_at": "2024-01-15T08:00:00Z",
+      "updated_at": "2024-03-20T14:30:00Z"
+    },
+    {
+      "uuid": "pur-002",
+      "nama_pura": "Pura Dalem",
+      "deskripsi": "<p>Pura Dalem adalah pura yang <strong>didedikasikan untuk Dewa Siwa</strong> dalam wujudnya sebagai pemangku alam kematian dan transformasi. Pura ini memiliki suasana yang khidmat dan misterius.</p><p>Ciri khas Pura Dalem adalah adanya <em>patung-patung rakasa</em> (buta) penjaga pintu gerbang yang diukir dengan ekspresi menakutkan namun artistik. Di dalam pura terdapat beberapa <em>padmasana</em> (tempat duduk lotus) yang digunakan untuk persembahan.</p><p>Pura ini menjadi tempat pelaksanaan upacara <strong>Ngaben</strong> (kremasi) dan upacara-upacara yang berkaitan dengan leluhur. Masyarakat setempat percaya bahwa Pura Dalem melindungi desa dari roh-roh jahat.</p>",
+      "alamat": "Jl. Dalem, Dusun Pujungan Timur, Desa Pujungan, Kec. Kubu, Kab. Karangasem",
+      "latitude": -8.2689,
+      "longitude": 115.5182,
+      "foto_url": "/images/pura-dalem.jpg",
+      "kategori_uuid": "kat-002",
+      "created_by": "adm-001",
+      "created_at": "2024-01-16T09:15:00Z",
+      "updated_at": "2024-03-21T11:00:00Z"
+    },
+    {
+      "uuid": "pur-003",
+      "nama_pura": "Pura Puseh",
+      "deskripsi": "<p>Pura Puseh adalah <strong>pura asal</strong> atau tempat leluhur pertama kali menetap di Desa Pujungan. Nama 'Puseh' berasal dari kata 'pus' yang berarti asal atau pusat.</p><p>Pura ini memiliki <em>bingin waringin</em> (pohon beringin suci) yang dipercaya sudah berusia ratusan tahun. Di bawah pohon inilah para leluhur dulu bersemadi dan menerima wahyu.</p><p>Arsitektur Pura Puseh lebih sederhana dibanding pura-pura lain, mencerminkan kehidupan masyarakat pada masa pembukaan desa. Namun, kesederhanaan ini justru memberikan suasana yang sangat tenang dan spiritual.</p><p>Upacara <strong>Piodalan</strong> di Pura Puseh diadakan setiap 210 hari sekali sesuai kalender Bali.</p>",
+      "alamat": "Jl. Puseh, Dusun Pujungan Utara, Desa Pujungan, Kec. Kubu, Kab. Karangasem",
+      "latitude": -8.2658,
+      "longitude": 115.5145,
+      "foto_url": "/images/pura-puseh.jpg",
+      "kategori_uuid": "kat-002",
+      "created_by": "adm-001",
+      "created_at": "2024-01-17T10:30:00Z",
+      "updated_at": "2024-03-22T09:45:00Z"
+    },
+    {
+      "uuid": "pur-004",
+      "nama_pura": "Pura Desa",
+      "deskripsi": "<p>Pura Desa adalah <strong>jantung spiritual</strong> komunitas Desa Pujungan. Pura ini menjadi tempat berkumpulnya warga untuk beribadah bersama dan mengambil keputusan adat.</p><p>Berbeda dengan pura-pura lain yang lebih terbatas, Pura Desa memiliki area <em>wantilan</em> (balai rakyat) yang cukup besar untuk menampung ratusan orang. Di sinilah diadakan pertemuan desa, pertunjukan seni, dan upacara kolektif.</p><p>Pura Desa juga memiliki <em>gong kebyar</em> dan seperangkat gamelan yang digunakan untuk mengiringi upacara dan pertunjukan. Suara gamelan yang mengalun dari Pura Desa sering menjadi tanda dimulainya upacara adat.</p><p>Setiap enam bulan sekali, diadakan upacara <strong>Odalan</strong> besar yang dihadiri seluruh warga desa dan tamu dari desa-desa sekitar.</p>",
+      "alamat": "Jl. Raya Pujungan, Pusat Desa Pujungan, Kec. Kubu, Kab. Karangasem",
+      "latitude": -8.2695,
+      "longitude": 115.5158,
+      "foto_url": "/images/pura-desa.jpg",
+      "kategori_uuid": "kat-001",
+      "created_by": "adm-002",
+      "created_at": "2024-01-18T11:45:00Z",
+      "updated_at": "2024-03-23T13:20:00Z"
+    },
+    {
+      "uuid": "pur-005",
+      "nama_pura": "Pura Segara",
+      "deskripsi": "<p>Pura Segara terletak di <strong>tepi pantai</strong> sekitar 3 km dari pusat desa. Pura ini didedikasikan untuk memuja <em>Dewa Baruna</em>, dewa laut dan penjaga keseimbangan alam.</p><p>Lokasi pura yang menghadap langsung ke Samudra Hindia memberikan pemandangan yang sangat indah, terutama saat matahari terbit. Suara ombak yang memecah di karang menjadi latar belakang alami yang sangat menenangkan.</p><p>Pura Segara menjadi tempat pelaksanaan upacara <strong>Melasti</strong>, yaitu upacara membersihkan pratima (arca suci) di laut sebelum hari raya Nyepi. Ratusan umat akan berbaris menuju pura ini membawa berbagai sesaji.</p><p>Di sekitar pura terdapat beberapa <em>pura pamuksan</em> kecil yang digunakan untuk bersemadi individual.</p>",
+      "alamat": "Pantai Pujungan, Desa Pujungan, Kec. Kubu, Kab. Karangasem",
+      "latitude": -8.2756,
+      "longitude": 115.5234,
+      "foto_url": "/images/pura-segara.jpg",
+      "kategori_uuid": "kat-004",
+      "created_by": "adm-001",
+      "created_at": "2024-01-19T13:00:00Z",
+      "updated_at": "2024-03-24T15:10:00Z"
+    },
+    {
+      "uuid": "pur-006",
+      "nama_pura": "Pura Luhur",
+      "deskripsi": "<p>Pura Luhur berada di <strong>ketinggian 450 meter</strong> di lereng bukit yang menghadap ke lembah. Nama 'Luhur' berarti tinggi atau mulia, mencerminkan posisi dan status spiritual pura ini.</p><p>Dibanding pura-pura lain, Pura Luhur memiliki akses yang lebih sulit dengan tangga batu sebanyak 365 anak tangga. Namun, perjuangan menuju pura ini dianggap sebagai bagian dari spiritual journey.</p><p>Dari pura ini, pengunjung dapat menikmati <strong>panorama 360 derajat</strong> yang menakjubkan - dari puncak Gunung Agung di barat laut hingga samudra di timur. Saat cuaca cerah, bahkan Pulau Lombok terlihat di kejauhan.</p><p>Pura Luhur menjadi tempat favorit untuk <em>pertapaan</em> dan meditasi. Beberapa pemangku desa secara bergantian melakukan <em>brata</em> (puasa dan bersemadi) di pura ini.</p><p>Upacara utama di Pura Luhur adalah <strong>Usaba Luhur</strong> yang diadakan setiap tahun sekali.</p>",
+      "alamat": "Bukit Luhur, Dusun Pujungan Selatan, Desa Pujungan, Kec. Kubu, Kab. Karangasem",
+      "latitude": -8.2723,
+      "longitude": 115.5089,
+      "foto_url": "/images/pura-luhur.jpg",
+      "kategori_uuid": "kat-003",
+      "created_by": "adm-002",
+      "created_at": "2024-01-20T14:30:00Z",
+      "updated_at": "2024-03-25T10:00:00Z"
+    },
+    {
+      "uuid": "pur-007",
+      "nama_pura": "Pura Melanting",
+      "deskripsi": "<p>Pura Melanting tersembunyi di <strong>tengah hutan jalau</strong> sekitar 2 km dari pemukiman. Pura ini didedikasikan untuk <em>Dewi Durga</em> dalam wujudnya sebagai pelindung alam.</p><p>Suasana di Pura Melanting sangat sejuk dan tenang, diiringi suara aliran sungai kecil dan kicauan burung. Udaranya yang segar membuat pura ini menjadi tempat yang ideal untuk bersemadi.</p><p>Pura ini memiliki beberapa <em>petirtaan</em> (mata air suci) yang airnya dipercaya memiliki khasiat penyembuhan. Warga desa sering mengambil air dari sini untuk keperluan upacara dan obat-obatan tradisional.</p><p>Akses ke Pura Melanting hanya bisa dilakukan dengan berjalan kaki melalui jalur setapak yang ditumbuhi pohon-pohon besar. Perjalanan ini menjadi semacam <strong>spiritual cleansing</strong> sebelum tiba di pura.</p>",
+      "alamat": "Hutan Jalau, Desa Pujungan, Kec. Kubu, Kab. Karangasem",
+      "latitude": -8.2612,
+      "longitude": 115.5211,
+      "foto_url": "/images/pura-melanting.jpg",
+      "kategori_uuid": "kat-003",
+      "created_by": "adm-001",
+      "created_at": "2024-01-21T09:00:00Z",
+      "updated_at": "2024-03-26T11:30:00Z"
+    },
+    {
+      "uuid": "pur-008",
+      "nama_pura": "Pura Sakenan",
+      "deskripsi": "<p>Pura Sakenan adalah pura yang <strong>mengabadikan hubungan</strong> antara Desa Pujungan dengan Kerajaan Gelgel. Pura ini dibangun sebagai tanda syukur atas perlindungan kerajaan.</p><p>Arsitektur Pura Sakenan memiliki unsur-unsur <em>keraton</em> yang tidak ditemukan di pura-pura lain di desa ini. Pintu gerbangnya dihiasi ukiran <em>patra</em> (motif daun) yang sangat halus dan detail.</p><p>Di dalam pura terdapat beberapa <em>prasasti</em> batu yang berisi sejarah hubungan desa dengan kerajaan. Prasasti-prasasti ini menjadi sumber penting bagi peneliti sejarah.</p><p>Pura Sakenan menjadi tempat pelaksanaan upacara <strong>Mapetik</strong>, yaitu upacara memohon berkat kepada leluhur dan roh pelindung desa.</p>",
+      "alamat": "Jl. Sakenan, Dusun Pujungan Barat, Desa Pujungan, Kec. Kubu, Kab. Karangasem",
+      "latitude": -8.2701,
+      "longitude": 115.5123,
+      "foto_url": "/images/pura-sakenan.jpg",
+      "kategori_uuid": "kat-002",
+      "created_by": "adm-002",
+      "created_at": "2024-01-22T10:15:00Z",
+      "updated_at": "2024-03-27T14:00:00Z"
+    }
+  ]
+}
