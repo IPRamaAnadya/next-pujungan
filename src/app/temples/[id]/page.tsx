@@ -79,14 +79,14 @@ export default async function TempleDetailPage({ params }: Params) {
     <PublicLayout>
       <main className="min-h-screen bg-[#f8f3ec] py-10">
         <div className="mx-auto max-w-6xl space-y-6 px-5 lg:px-8">
-          <header>
+          <header data-aos="fade-up">
             <p className="text-xs font-semibold tracking-wide text-[#c68e51] uppercase">{temple.category.name}</p>
             <h1 className="mt-2 text-3xl font-bold text-[#151515] md:text-4xl">{temple.name}</h1>
             <p className="mt-2 text-sm text-[#5f5f5f]">{temple.address}</p>
           </header>
 
           {firstImage ? (
-            <div className="relative aspect-16/8 overflow-hidden bg-white shadow-md">
+            <div data-aos="fade-up" className="relative aspect-16/8 overflow-hidden bg-white shadow-md">
               <Image src={firstImage} alt={temple.name} fill sizes="100vw" className="object-cover" priority />
             </div>
           ) : null}
@@ -99,17 +99,19 @@ export default async function TempleDetailPage({ params }: Params) {
             ))}
           </section>
 
-          <article className="prose max-w-none bg-white p-6" dangerouslySetInnerHTML={{ __html: temple.description }} />
+          <article data-aos="fade-up" className="prose max-w-none bg-white p-6" dangerouslySetInnerHTML={{ __html: temple.description }} />
 
           {otherTemples.length ? (
             <section className="space-y-4">
-              <h2 className="text-2xl font-semibold text-[#151515]">Pura Lainnya</h2>
+              <h2 data-aos="fade-up" className="text-2xl font-semibold text-[#151515]">Pura Lainnya</h2>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {otherTemples.map((otherTemple) => {
+                {otherTemples.map((otherTemple, index) => {
                   const imagePath = otherTemple.images[0]?.path;
 
                   return (
                     <Link
+                      data-aos="fade-up"
+                      data-aos-delay={String(index * 80)}
                       key={otherTemple.id}
                       href={`/temples/${otherTemple.id}`}
                       className="overflow-hidden bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"

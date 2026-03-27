@@ -59,7 +59,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Alamat',
-      content: 'Jl. Raya Pujungan No. 1, Kubu, Karangasem, Bali 80853',
+      content: 'Jl. Raya Pujungan No. 1, Pupuan, Tabanan, Bali 80853',
       link: null,
     },
     {
@@ -161,9 +161,9 @@ const Contact = () => {
                     <div className="text-center">
                       <MapPin size={48} className="mx-auto mb-4 text-[#c68e51]" />
                       <p className="text-[#3c3c3c] font-medium">Desa Pujungan</p>
-                      <p className="text-[#888888] text-sm">Kubu, Karangasem, Bali</p>
+                      <p className="text-[#888888] text-sm">Pupuan, Tabanan, Bali</p>
                       <a
-                        href="https://www.google.com/maps/search/Desa+Pujungan,+Kubu,+Karangasem,+Bali"
+                        href="https://www.google.com/maps/search/Desa+Pujungan,+Pupuan,+Tabanan,+Bali"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block mt-4 text-[#c68e51] hover:underline text-sm"

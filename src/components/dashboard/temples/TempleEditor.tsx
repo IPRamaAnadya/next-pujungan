@@ -2,6 +2,10 @@
 
 import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
+
+const MapPickerField = dynamic(() => import("./MapPickerField"), { ssr: false });
+const QuillEditor = dynamic(() => import("./QuillEditor"), { ssr: false });
 
 type Category = {
   id: string;
@@ -109,6 +113,16 @@ export default function TempleEditor({ mode, templeId, showHeader = true }: Prop
   async function handleFileUpload(event: ChangeEvent<HTMLInputElement>) {
     const files = event.target.files;
     if (!files?.length) return;
+
+    const MAX_SIZE = 1 * 1024 * 1024; // 1MB
+    const oversized = Array.from(files).filter((file) => file.size > MAX_SIZE);
+    if (oversized.length > 0) {
+      setError(
+        `File berikut melebihi batas ukuran 1MB: ${oversized.map((f) => f.name).join(", ")}`,
+      );
+      event.target.value = "";
+      return;
+    }
 
     const formData = new FormData();
     Array.from(files).forEach((file) => formData.append("files", file));
@@ -242,23 +256,15 @@ export default function TempleEditor({ mode, templeId, showHeader = true }: Prop
             />
           </label>
 
-          <label className="space-y-1 text-sm text-zinc-700">
-            <span>Latitude</span>
-            <input
-              value={latitude}
-              onChange={(event) => setLatitude(event.target.value)}
-              className="w-full rounded-md border border-zinc-300 px-3 py-2"
-              required
-            />
-          </label>
-
-          <label className="space-y-1 text-sm text-zinc-700">
-            <span>Longitude</span>
-            <input
-              value={longitude}
-              onChange={(event) => setLongitude(event.target.value)}
-              className="w-full rounded-md border border-zinc-300 px-3 py-2"
-              required
+          <label className="space-y-1 text-sm text-zinc-700 md:col-span-2">
+            <span>Lokasi Pura</span>
+            <MapPickerField
+              latitude={latitude}
+              longitude={longitude}
+              onChange={(lat, lng) => {
+                setLatitude(lat);
+                setLongitude(lng);
+              }}
             />
           </label>
 
@@ -289,15 +295,10 @@ export default function TempleEditor({ mode, templeId, showHeader = true }: Prop
             </select>
           </label>
 
-          <label className="space-y-1 text-sm text-zinc-700 md:col-span-2">
-            <span>Deskripsi (HTML diperbolehkan)</span>
-            <textarea
-              value={description}
-              onChange={(event) => setDescription(event.target.value)}
-              className="min-h-36 w-full rounded-md border border-zinc-300 px-3 py-2"
-              required
-            />
-          </label>
+          <div className="space-y-1 text-sm text-zinc-700 md:col-span-2">
+            <span>Deskripsi</span>
+            <QuillEditor value={description} onChange={setDescription} />
+          </div>
         </div>
 
         <section className="space-y-3">

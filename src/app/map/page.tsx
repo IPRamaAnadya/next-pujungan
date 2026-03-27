@@ -1,4 +1,5 @@
 import FullscreenTempleMap from "@/components/public/FullscreenTempleMap";
+import { PublicLayout } from "@/components/public/PublicLayout";
 import { prisma } from "@/lib/prisma";
 
 export default async function MapPage() {
@@ -27,5 +28,9 @@ export default async function MapPage() {
     imagePath: temple.images[0]?.path ?? null,
   }));
 
-  return <FullscreenTempleMap temples={templePins} />;
+  return (
+    <PublicLayout hideFooter>
+      <FullscreenTempleMap temples={templePins} />
+    </PublicLayout>
+  );
 }

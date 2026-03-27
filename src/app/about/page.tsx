@@ -34,16 +34,16 @@ export default function AboutPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#151515]/80 via-[#151515]/90 to-[#151515]" />
           <div className="relative mx-auto w-full max-w-7xl px-5 lg:px-8">
-            <p className="text-xs font-semibold tracking-[0.2em] text-[#c68e51] uppercase">Tentang Kami</p>
-            <h1 className="mt-4 max-w-3xl text-4xl font-bold text-white md:text-5xl lg:text-6xl">Desa Pujungan</h1>
-            <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/75 md:text-lg">
-              Desa yang terletak di Kecamatan Kubu, Kabupaten Karangasem, Bali, dengan warisan spiritual Hindu-Bali yang masih dijaga lintas generasi.
+            <p data-aos="fade-up" className="text-xs font-semibold tracking-[0.2em] text-[#c68e51] uppercase">Tentang Kami</p>
+            <h1 data-aos="fade-up" data-aos-delay="100" className="mt-4 max-w-3xl text-4xl font-bold text-white md:text-5xl lg:text-6xl">Desa Pujungan</h1>
+            <p data-aos="fade-up" data-aos-delay="200" className="mt-6 max-w-3xl text-base leading-relaxed text-white/75 md:text-lg">
+              Desa yang terletak di Kecamatan Pupuan, Kabupaten Tabanan, Bali, dengan warisan spiritual Hindu-Bali yang masih dijaga lintas generasi.
             </p>
           </div>
         </section>
 
         <section className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-16 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-24">
-          <div className="relative h-80 overflow-hidden shadow-xl lg:h-[500px]">
+          <div data-aos="fade-right" className="relative h-80 overflow-hidden shadow-xl lg:h-[500px]">
             <Image
               src="/images/history-carving.jpg"
               alt="Sejarah Desa Pujungan"
@@ -52,7 +52,7 @@ export default function AboutPage() {
               className="object-cover"
             />
           </div>
-          <div>
+          <div data-aos="fade-left">
             <p className="text-xs font-semibold tracking-[0.2em] text-[#c68e51] uppercase">Sejarah</p>
             <h2 className="mt-3 text-3xl font-bold text-[#151515] md:text-4xl">Akar Sejarah yang Dalam</h2>
             <div className="mt-6 space-y-4 text-sm leading-relaxed text-[#3c3c3c] md:text-base">
@@ -71,12 +71,12 @@ export default function AboutPage() {
 
         <section className="bg-white py-16 lg:py-24">
           <div className="mx-auto w-full max-w-7xl px-5 lg:px-8">
-            <p className="text-center text-xs font-semibold tracking-[0.2em] text-[#c68e51] uppercase">Nilai-Nilai</p>
-            <h2 className="mt-3 text-center text-3xl font-bold text-[#151515] md:text-4xl">Filosofi Hidup Kami</h2>
+            <p data-aos="fade-up" className="text-center text-xs font-semibold tracking-[0.2em] text-[#c68e51] uppercase">Nilai-Nilai</p>
+            <h2 data-aos="fade-up" data-aos-delay="100" className="mt-3 text-center text-3xl font-bold text-[#151515] md:text-4xl">Filosofi Hidup Kami</h2>
 
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               {values.map((value, index) => (
-                <article key={value.title} className="bg-[#f8f3ec] p-6 shadow-sm">
+                <article data-aos="fade-up" data-aos-delay={String(index * 100)} key={value.title} className="bg-[#f8f3ec] p-6 shadow-sm">
                   <div className="mb-4 flex h-10 w-10 items-center justify-center bg-[#c68e51] text-lg font-bold text-[#151515]">
                     {index + 1}
                   </div>

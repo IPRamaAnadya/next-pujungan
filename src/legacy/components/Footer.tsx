@@ -117,8 +117,8 @@ const Footer = () => {
                 <li className="flex items-start gap-3">
                   <MapPin size={18} className="text-[#c68e51] mt-0.5 flex-shrink-0" />
                   <span className="text-white/70 text-sm leading-relaxed">
-                    Jl. Raya Pujungan No. 1, Kubu,<br />
-                    Karangasem, Bali 80853
+                    Jl. Raya Pujungan No. 1, Pupuan,<br />
+                    Tabanan, Bali 80853
                   </span>
                 </li>
                 <li className="flex items-center gap-3">

@@ -70,7 +70,7 @@ const About = () => {
               Desa Pujungan
             </h1>
             <p className="reveal-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200 text-white/70 text-lg md:text-xl leading-relaxed max-w-2xl">
-              Sebuah desa yang terletak di Kecamatan Kubu, Kabupaten Karangasem, 
+              Sebuah desa yang terletak di Kecamatan Pupuan, Kabupaten Tabanan, 
               Bali, yang kaya akan warisan spiritual dan budaya Hindu-Bali.
             </p>
           </div>
@@ -210,7 +210,7 @@ const About = () => {
               
               <div className="space-y-6 reveal-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200">
                 <p className="text-[#3c3c3c] leading-relaxed">
-                  Desa Pujungan terletak di bagian timur laut Kabupaten Karangasem, 
+                  Desa Pujungan terletak di bagian timur laut Kabupaten Tabanan, 
                   dengan ketinggian rata-rata 150-450 meter di atas permukaan laut. 
                   Wilayahnya berbatasan dengan:
                 </p>
@@ -226,7 +226,7 @@ const About = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="w-2 h-2 bg-[#c68e51] mt-2 flex-shrink-0" />
-                    <span className="text-[#3c3c3c]"><strong>Selatan:</strong> Desa Kubu</span>
+                    <span className="text-[#3c3c3c]"><strong>Selatan:</strong> Desa Pupuan</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="w-2 h-2 bg-[#c68e51] mt-2 flex-shrink-0" />

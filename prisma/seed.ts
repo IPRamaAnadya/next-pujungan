@@ -1,8 +1,7 @@
 import bcrypt from "bcryptjs";
-import { PrismaClient, UserRole } from "@prisma/client";
 import sourceData from "./data/temples.json";
-
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/prisma";
+import { UserRole } from "@prisma/client/edge";
 
 type SourceData = {
   admin: Array<{

@@ -70,7 +70,7 @@ const Home = () => {
 
             {/* Subtitle */}
             <p className="reveal-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-300 text-xl md:text-2xl text-white/80 italic mb-6">
-              Kubu, Karangasem, Bali
+              Pupuan, Tabanan, Bali
             </p>
 
             {/* Description */}

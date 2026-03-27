@@ -28,7 +28,7 @@ export default function ContactPage() {
     <PublicLayout>
       <main className="bg-[#f8f3ec] py-14 lg:py-20">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 lg:grid-cols-2 lg:gap-16 lg:px-8">
-          <section>
+          <section data-aos="fade-right">
             <p className="text-xs font-semibold tracking-[0.2em] text-[#c68e51] uppercase">Hubungi Kami</p>
             <h1 className="mt-3 text-4xl font-bold text-[#151515] md:text-5xl">Mari Terhubung</h1>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#3c3c3c] md:text-base">
@@ -38,7 +38,7 @@ export default function ContactPage() {
             <div className="mt-8 space-y-4 text-sm text-[#3c3c3c]">
               <div className="bg-white p-5 shadow-sm">
                 <p className="font-semibold text-[#151515]">Alamat</p>
-                <p className="mt-1">Jl. Raya Pujungan No. 1, Kubu, Karangasem, Bali 80853</p>
+                <p className="mt-1">Jl. Raya Pujungan No. 1, Pupuan, Tabanan, Bali 80853</p>
               </div>
               <div className="bg-white p-5 shadow-sm">
                 <p className="font-semibold text-[#151515]">Telepon</p>
@@ -55,7 +55,7 @@ export default function ContactPage() {
             </div>
           </section>
 
-          <section className="bg-white p-6 shadow-lg md:p-8">
+          <section data-aos="fade-left" className="bg-white p-6 shadow-lg md:p-8">
             <h2 className="text-2xl font-semibold text-[#151515]">Kirim Pesan</h2>
             <p className="mt-2 text-sm text-[#666]">Form ini saat ini disiapkan untuk integrasi endpoint pengiriman pesan.</p>
 
