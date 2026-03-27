@@ -99,7 +99,7 @@ export default async function TempleDetailPage({ params }: Params) {
             ))}
           </section>
 
-          <article data-aos="fade-up" className="prose max-w-none bg-white p-6" dangerouslySetInnerHTML={{ __html: temple.description }} />
+          <article data-aos="fade-up" className="prose max-w-none bg-white p-6" dangerouslySetInnerHTML={{ __html: temple.description.replace(/&nbsp;/g, " ") }} />
 
           {otherTemples.length ? (
             <section className="space-y-4">

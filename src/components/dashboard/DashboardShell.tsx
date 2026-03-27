@@ -1,4 +1,4 @@
-import Link from "next/link";
+import DashboardNav from "./DashboardNav";
 
 type DashboardShellProps = {
   title: string;
@@ -6,13 +6,6 @@ type DashboardShellProps = {
   children: React.ReactNode;
   actions?: React.ReactNode;
 };
-
-const navItems = [
-  { href: "/dashboard", label: "Ringkasan" },
-  { href: "/dashboard/temples", label: "Kelola Pura" },
-  { href: "/dashboard/categories", label: "Kategori" },
-  { href: "/dashboard/admins", label: "Admin" },
-];
 
 export default function DashboardShell({ title, subtitle, actions, children }: DashboardShellProps) {
   return (
@@ -28,16 +21,7 @@ export default function DashboardShell({ title, subtitle, actions, children }: D
             {actions ? <div className="flex flex-wrap gap-2">{actions}</div> : null}
           </div>
 
-          <nav className="mt-4 flex flex-wrap gap-2 border-t border-zinc-100 pt-4">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm hover:bg-zinc-50">
-                {item.label}
-              </Link>
-            ))}
-            <Link href="/" className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm hover:bg-zinc-50">
-              Lihat Situs
-            </Link>
-          </nav>
+          <DashboardNav />
         </header>
 
         {children}
