@@ -1,11 +1,6 @@
-import dynamic from "next/dynamic";
+import FullscreenTempleMapClient from "@/components/public/FullscreenTempleMapClient";
 import { PublicLayout } from "@/components/public/PublicLayout";
 import { prisma } from "@/lib/prisma";
-
-const FullscreenTempleMap = dynamic(
-  () => import("@/components/public/FullscreenTempleMap"),
-  { ssr: false },
-);
 
 export default async function MapPage() {
 
@@ -35,7 +30,7 @@ export default async function MapPage() {
 
   return (
     <PublicLayout hideFooter>
-      <FullscreenTempleMap temples={templePins} />
+      <FullscreenTempleMapClient temples={templePins} />
     </PublicLayout>
   );
 }
