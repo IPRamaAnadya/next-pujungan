@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PublicLayout } from "@/components/public/PublicLayout";
+import TempleMiniMapClient from "@/components/public/TempleMiniMapClient";
 import { prisma } from "@/lib/prisma";
 
 type Params = {
@@ -99,7 +100,16 @@ export default async function TempleDetailPage({ params }: Params) {
             ))}
           </section>
 
-          <article data-aos="fade-up" className="prose max-w-none bg-white p-6" dangerouslySetInnerHTML={{ __html: temple.description.replace(/&nbsp;/g, " ") }} />
+          <section className="grid gap-5 lg:grid-cols-[minmax(0,2fr)_minmax(280px,1fr)] lg:items-start">
+            <article
+              data-aos="fade-up"
+              className="prose max-w-none bg-white p-6"
+              dangerouslySetInnerHTML={{ __html: temple.description.replace(/&nbsp;/g, " ") }}
+            />
+            <div data-aos="fade-up" data-aos-delay="70" className="lg:sticky lg:top-24">
+              <TempleMiniMapClient latitude={temple.latitude} longitude={temple.longitude} templeName={temple.name} />
+            </div>
+          </section>
 
           {otherTemples.length ? (
             <section className="space-y-4">
