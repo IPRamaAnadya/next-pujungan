@@ -8,7 +8,7 @@ import { requireSuperAdminSession } from "@/lib/route-guards";
 const updateSchema = z.object({
   name: z.string().min(1),
   email: z.string().email(),
-  role: z.enum(["ADMIN", "EDITOR"]),
+  role: z.enum(["ADMIN"]),
   password: z.string().min(6).optional(),
 });
 

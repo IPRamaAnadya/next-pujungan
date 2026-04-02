@@ -7,7 +7,7 @@ type AdminUser = {
   id: string;
   name: string | null;
   email: string | null;
-  role: "ADMIN" | "EDITOR";
+  role: "ADMIN";
   createdAt: string;
   updatedAt: string;
 };
@@ -25,7 +25,7 @@ export default function AdminManager({ currentUserId }: { currentUserId: string 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState<"ADMIN" | "EDITOR">("EDITOR");
+  const [role, setRole] = useState<"ADMIN">("ADMIN");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   async function loadUsers() {
@@ -54,7 +54,7 @@ export default function AdminManager({ currentUserId }: { currentUserId: string 
     setName("");
     setEmail("");
     setPassword("");
-    setRole("EDITOR");
+    setRole("ADMIN");
   }
 
   function startEdit(user: AdminUser) {
@@ -184,10 +184,9 @@ export default function AdminManager({ currentUserId }: { currentUserId: string 
             <span>Role</span>
             <select
               value={role}
-              onChange={(event) => setRole(event.target.value as "ADMIN" | "EDITOR")}
+              onChange={(event) => setRole(event.target.value as "ADMIN")}
               className="w-full rounded-md border border-zinc-300 px-3 py-2"
             >
-              <option value="EDITOR">EDITOR</option>
               <option value="ADMIN">ADMIN</option>
             </select>
           </label>

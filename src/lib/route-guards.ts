@@ -9,7 +9,7 @@ export async function requireAdminSession() {
   }
 
   const role = session.user.role as UserRole | string;
-  if (role !== "ADMIN" && role !== "EDITOR") {
+  if (role !== "ADMIN") {
     return null;
   }
 
