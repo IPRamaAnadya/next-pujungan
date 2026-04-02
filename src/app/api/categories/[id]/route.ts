@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { requireAdminSession } from "@/lib/route-guards";
+import { uniqueSlug } from "@/lib/slug";
 
 const categoryUpdateSchema = z.object({
   name: z.string().min(1),
@@ -29,9 +30,14 @@ export async function PATCH(request: Request, { params }: Params) {
     );
   }
 
+  const slug = await uniqueSlug(parsed.data.name, (s) =>
+    prisma.category.findFirst({ where: { slug: s, NOT: { id } } }).then(Boolean),
+  );
+
   const category = await prisma.category.update({
     where: { id },
     data: {
+      slug,
       name: parsed.data.name,
       description: parsed.data.description,
     },

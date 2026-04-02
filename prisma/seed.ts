@@ -3,6 +3,14 @@ import sourceData from "./data/temples.json";
 import { prisma } from "@/lib/prisma";
 import { UserRole } from "@prisma/client/edge";
 
+function toSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
+
 type SourceData = {
   admin: Array<{
     uuid: string;
@@ -34,41 +42,38 @@ async function main() {
   await prisma.templeImage.deleteMany();
   await prisma.temple.deleteMany();
   await prisma.category.deleteMany();
-  await prisma.account.deleteMany();
-  await prisma.session.deleteMany();
   await prisma.user.deleteMany();
 
   const passwordHash = await bcrypt.hash("admin123", 10);
 
-  const usersByLegacyId = new Map<string, string>();
+  const usersByUuid = new Map<string, string>();
   for (const admin of data.admin) {
     const user = await prisma.user.create({
       data: {
-        legacyId: admin.uuid,
         name: admin.nama,
         email: admin.email,
         password: passwordHash,
-        role: admin.role.toLowerCase() === "admin" ? UserRole.ADMIN : UserRole.EDITOR,
+        role: UserRole.ADMIN,
       },
     });
-    usersByLegacyId.set(admin.uuid, user.id);
+    usersByUuid.set(admin.uuid, user.id);
   }
 
-  const categoriesByLegacyId = new Map<string, string>();
+  const categoriesByUuid = new Map<string, string>();
   for (const category of data.kategori_pura) {
     const created = await prisma.category.create({
       data: {
-        legacyId: category.uuid,
+        slug: toSlug(category.nama_kategori),
         name: category.nama_kategori,
         description: category.deskripsi,
       },
     });
-    categoriesByLegacyId.set(category.uuid, created.id);
+    categoriesByUuid.set(category.uuid, created.id);
   }
 
   for (const temple of data.pura) {
-    const createdById = usersByLegacyId.get(temple.created_by);
-    const categoryId = categoriesByLegacyId.get(temple.kategori_uuid);
+    const createdById = usersByUuid.get(temple.created_by);
+    const categoryId = categoriesByUuid.get(temple.kategori_uuid);
 
     if (!createdById || !categoryId) {
       continue;
@@ -76,7 +81,7 @@ async function main() {
 
     await prisma.temple.create({
       data: {
-        legacyId: temple.uuid,
+        slug: toSlug(temple.nama_pura),
         name: temple.nama_pura,
         description: temple.deskripsi,
         address: temple.alamat,

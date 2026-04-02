@@ -1,8 +1,9 @@
 import { randomUUID } from "crypto";
-import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 import { NextResponse } from "next/server";
+import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { requireAdminSession } from "@/lib/route-guards";
+import { s3, S3_BUCKET, S3_PUBLIC_BASE } from "@/lib/s3";
 
 const ALLOWED_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp"]);
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
@@ -24,9 +25,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: "No files uploaded" }, { status: 400 });
   }
 
-  const uploadDir = path.join(process.cwd(), "public", "uploads");
-  await mkdir(uploadDir, { recursive: true });
-
   const uploaded: Array<{ path: string; name: string; size: number }> = [];
 
   for (const file of files) {
@@ -45,14 +43,21 @@ export async function POST(request: Request) {
       );
     }
 
-    const storedName = `${Date.now()}-${randomUUID()}-${sanitizeFileName(file.name)}`;
-    const fullPath = path.join(uploadDir, storedName);
-
+    const key = `uploads/${Date.now()}-${randomUUID()}-${sanitizeFileName(file.name)}`;
     const buffer = Buffer.from(await file.arrayBuffer());
-    await writeFile(fullPath, buffer);
+
+    await s3.send(
+      new PutObjectCommand({
+        Bucket: S3_BUCKET,
+        Key: key,
+        Body: buffer,
+        ContentType: file.type,
+        ACL: "public-read",
+      }),
+    );
 
     uploaded.push({
-      path: `/uploads/${storedName}`,
+      path: `${S3_PUBLIC_BASE}/${key}`,
       name: file.name,
       size: file.size,
     });
@@ -60,3 +65,4 @@ export async function POST(request: Request) {
 
   return NextResponse.json({ files: uploaded }, { status: 201 });
 }
+

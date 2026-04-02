@@ -20,6 +20,7 @@ export default async function MapPage() {
 
   const templePins = temples.map((temple) => ({
     id: temple.id,
+    slug: temple.slug,
     name: temple.name,
     address: temple.address,
     latitude: temple.latitude,

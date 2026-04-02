@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { requireAdminSession } from "@/lib/route-guards";
+import { uniqueSlug } from "@/lib/slug";
 
 const templeUpdateSchema = z.object({
   name: z.string().min(1),
@@ -63,9 +64,14 @@ export async function PATCH(request: Request, { params }: Params) {
     );
   }
 
+  const slug = await uniqueSlug(parsed.data.name, (s) =>
+    prisma.temple.findFirst({ where: { slug: s, NOT: { id } } }).then(Boolean),
+  );
+
   const updated = await prisma.temple.update({
     where: { id },
     data: {
+      slug,
       name: parsed.data.name,
       description: parsed.data.description,
       address: parsed.data.address,

@@ -1,19 +1,20 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PublicLayout } from "@/components/public/PublicLayout";
 import TempleMiniMapClient from "@/components/public/TempleMiniMapClient";
+import TempleImageSlider from "@/components/public/TempleImageSlider";
 import { prisma } from "@/lib/prisma";
 
 type Params = {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 };
 
 export default async function TempleDetailPage({ params }: Params) {
-  const { id } = await params;
+  const { slug } = await params;
 
   const temple = await prisma.temple.findUnique({
-    where: { id },
+    where: { slug },
     include: {
       category: true,
       images: {
@@ -74,8 +75,6 @@ export default async function TempleDetailPage({ params }: Params) {
 
   const otherTemples = [...sameCategoryTemples, ...fallbackTemples];
 
-  const firstImage = temple.images[0]?.path;
-
   return (
     <PublicLayout>
       <main className="min-h-screen bg-[#f8f3ec] py-10">
@@ -86,19 +85,11 @@ export default async function TempleDetailPage({ params }: Params) {
             <p className="mt-2 text-sm text-[#5f5f5f]">{temple.address}</p>
           </header>
 
-          {firstImage ? (
-            <div data-aos="fade-up" className="relative aspect-16/8 overflow-hidden bg-white shadow-md">
-              <Image src={firstImage} alt={temple.name} fill sizes="100vw" className="object-cover" priority />
+          {temple.images.length > 0 && (
+            <div data-aos="fade-up">
+              <TempleImageSlider images={temple.images} templeName={temple.name} />
             </div>
-          ) : null}
-
-          <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {temple.images.map((image) => (
-              <div key={image.id} className="relative aspect-video overflow-hidden bg-white shadow-sm">
-                <Image src={image.path} alt={image.alt ?? temple.name} fill sizes="(max-width: 1024px) 50vw, 33vw" className="object-cover" />
-              </div>
-            ))}
-          </section>
+          )}
 
           <section className="grid gap-5 lg:grid-cols-[minmax(0,2fr)_minmax(280px,1fr)] lg:items-start">
             <article
@@ -123,7 +114,7 @@ export default async function TempleDetailPage({ params }: Params) {
                       data-aos="fade-up"
                       data-aos-delay={String(index * 80)}
                       key={otherTemple.id}
-                      href={`/temples/${otherTemple.id}`}
+                      href={`/temples/${otherTemple.slug}`}
                       className="overflow-hidden bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                     >
                       <div className="relative h-44 bg-zinc-100">

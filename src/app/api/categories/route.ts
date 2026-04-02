@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { requireAdminSession } from "@/lib/route-guards";
+import { uniqueSlug } from "@/lib/slug";
 
 const categorySchema = z.object({
   name: z.string().min(1),
@@ -34,8 +35,13 @@ export async function POST(request: Request) {
     );
   }
 
+  const slug = await uniqueSlug(parsed.data.name, (s) =>
+    prisma.category.findUnique({ where: { slug: s } }).then(Boolean),
+  );
+
   const category = await prisma.category.create({
     data: {
+      slug,
       name: parsed.data.name,
       description: parsed.data.description,
     },

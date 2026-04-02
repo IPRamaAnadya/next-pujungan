@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 type TemplePin = {
   id: string;
+  slug: string;
   name: string;
   address: string;
   latitude: number;
@@ -99,7 +100,7 @@ export default function FullscreenTempleMap({ temples }: FullscreenTempleMapProp
                   <h2 className="text-sm font-bold text-white leading-snug">{temple.name}</h2>
                   <p className="text-[11px] leading-relaxed text-white/50">{temple.address}</p>
                   <a
-                    href={`/temples/${temple.id}`}
+                    href={`/temples/${temple.slug}`}
                     className="mt-1 inline-flex items-center gap-1 text-[11px] font-semibold text-[#c68e51] hover:text-[#d9a067] transition-colors"
                   >
                     Lihat Detail <span aria-hidden>→</span>

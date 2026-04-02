@@ -71,7 +71,7 @@ export default async function DashboardTemplesPage() {
                 </td>
                 <td className="px-4 py-3">
                   <div className="flex justify-end gap-2">
-                    <Link href={`/temples/${temple.id}`} className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm hover:bg-zinc-50">
+                    <Link href={`/temples/${temple.slug}`} className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm hover:bg-zinc-50">
                       Lihat
                     </Link>
                     <Link href={`/dashboard/temples/${temple.id}/edit`} className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm hover:bg-zinc-50">

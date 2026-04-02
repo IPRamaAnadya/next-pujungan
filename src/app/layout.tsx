@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pujungan",
-  description: "Next.js fullstack CMS for temple data",
+  title: "Pura Pujungan",
+  description: "Panduan lengkap pura di Bali, dengan informasi detail dan peta interaktif untuk memudahkan penjelajahan budaya Bali.",
 };
 
 export default function RootLayout({

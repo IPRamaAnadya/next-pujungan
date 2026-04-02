@@ -73,7 +73,7 @@ export default async function Home() {
                   data-aos="fade-up"
                   data-aos-delay={String(index * 80)}
                   key={temple.id}
-                  href={`/temples/${temple.id}`}
+                  href={`/temples/${temple.slug}`}
                   className="group overflow-hidden bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl"
                 >
                   <div className="relative h-56 w-full bg-zinc-100">

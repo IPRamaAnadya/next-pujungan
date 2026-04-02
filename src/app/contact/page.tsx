@@ -5,22 +5,31 @@ import { PublicLayout } from "@/components/public/PublicLayout";
 
 const initialForm = {
   name: "",
-  email: "",
+  phone: "",
   subject: "",
   message: "",
 };
 
 export default function ContactPage() {
   const [formData, setFormData] = useState(initialForm);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 900));
-    setIsSubmitting(false);
-    setSubmitted(true);
+
+    const waNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
+    const text = [
+      `*Nama:* ${formData.name}`,
+      `*No. HP:* ${formData.phone}`,
+      `*Subjek:* ${formData.subject}`,
+      `*Pesan:* ${formData.message}`,
+    ].join("\n");
+
+    window.open(
+      `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
+
     setFormData(initialForm);
   };
 
@@ -41,15 +50,14 @@ export default function ContactPage() {
                 <p className="mt-1">Jl. Raya Pujungan No. 1, Pupuan, Tabanan, Bali 80853</p>
               </div>
               <div className="bg-white p-5 shadow-sm">
-                <p className="font-semibold text-[#151515]">Telepon</p>
-                <a href="tel:+62361123456" className="mt-1 inline-block text-[#c68e51] hover:underline">
-                  +62 361 123456
-                </a>
-              </div>
-              <div className="bg-white p-5 shadow-sm">
-                <p className="font-semibold text-[#151515]">Email</p>
-                <a href="mailto:info@desapujungan.bali" className="mt-1 inline-block text-[#c68e51] hover:underline">
-                  info@desapujungan.bali
+                <p className="font-semibold text-[#151515]">Telepon / WhatsApp</p>
+                <a
+                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 inline-block text-[#c68e51] hover:underline"
+                >
+                  +{process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}
                 </a>
               </div>
             </div>
@@ -57,13 +65,7 @@ export default function ContactPage() {
 
           <section data-aos="fade-left" className="bg-white p-6 shadow-lg md:p-8">
             <h2 className="text-2xl font-semibold text-[#151515]">Kirim Pesan</h2>
-            <p className="mt-2 text-sm text-[#666]">Form ini saat ini disiapkan untuk integrasi endpoint pengiriman pesan.</p>
-
-            {submitted ? (
-              <div className="mt-6 rounded border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-800">
-                Pesan Anda telah terkirim. Terima kasih sudah menghubungi kami.
-              </div>
-            ) : null}
+            <p className="mt-2 text-sm text-[#666]">Pesan akan diteruskan langsung ke WhatsApp kami.</p>
 
             <form onSubmit={onSubmit} className="mt-6 space-y-4">
               <input
@@ -75,10 +77,10 @@ export default function ContactPage() {
               />
               <input
                 required
-                type="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={(event) => setFormData((prev) => ({ ...prev, email: event.target.value }))}
+                type="tel"
+                placeholder="No. HP"
+                value={formData.phone}
+                onChange={(event) => setFormData((prev) => ({ ...prev, phone: event.target.value }))}
                 className="w-full border border-zinc-300 px-3 py-2 text-sm focus:border-[#c68e51] focus:outline-none"
               />
               <input
@@ -99,10 +101,9 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="bg-[#c68e51] px-5 py-2.5 text-sm font-semibold text-[#151515] transition hover:bg-[#b07d45] disabled:cursor-not-allowed disabled:opacity-70"
+                className="bg-[#c68e51] px-5 py-2.5 text-sm font-semibold text-[#151515] transition hover:bg-[#b07d45]"
               >
-                {isSubmitting ? "Mengirim..." : "Kirim Pesan"}
+                Kirim Pesan via WhatsApp
               </button>
             </form>
           </section>
