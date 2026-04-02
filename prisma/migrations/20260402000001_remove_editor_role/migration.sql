@@ -1,3 +1,6 @@
+-- Migrate existing EDITOR rows to ADMIN before removing the enum value
+UPDATE "public"."User" SET "role" = 'ADMIN' WHERE "role" = 'EDITOR';
+
 -- Remove EDITOR from UserRole enum
 -- PostgreSQL requires renaming the old enum, creating a new one, and migrating the column
 
