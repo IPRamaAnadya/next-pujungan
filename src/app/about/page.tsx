@@ -1,24 +1,6 @@
 import Image from "next/image";
 import { PublicLayout } from "@/components/public/PublicLayout";
 
-const values = [
-  {
-    title: "Tri Hita Karana",
-    description:
-      "Tiga penyebab kebahagiaan: harmoni dengan Tuhan, manusia, dan alam. Filosofi ini menjadi panduan hidup masyarakat Desa Pujungan.",
-  },
-  {
-    title: "Desa Kala Patra",
-    description:
-      "Kesadaran untuk menyesuaikan diri dengan tempat, waktu, dan keadaan agar setiap kegiatan tetap menghormati konteks adat.",
-  },
-  {
-    title: "Sradha Bhakti",
-    description:
-      "Kesetiaan dan pengabdian kepada Yang Maha Kuasa yang diwujudkan melalui upacara keagamaan secara tulus dan konsisten.",
-  },
-];
-
 export default function AboutPage() {
   return (
     <PublicLayout>
@@ -37,7 +19,7 @@ export default function AboutPage() {
             <p data-aos="fade-up" className="text-xs font-semibold tracking-[0.2em] text-[#c68e51] uppercase">Tentang Kami</p>
             <h1 data-aos="fade-up" data-aos-delay="100" className="mt-4 max-w-3xl text-4xl font-bold text-white md:text-5xl lg:text-6xl">Desa Pujungan</h1>
             <p data-aos="fade-up" data-aos-delay="200" className="mt-6 max-w-3xl text-base leading-relaxed text-white/75 md:text-lg">
-              Desa yang terletak di Kecamatan Pupuan, Kabupaten Tabanan, Bali, dengan warisan spiritual Hindu-Bali yang masih dijaga lintas generasi.
+             Desa Adat Pujungan terletak di lereng Gunung Batukaru dengan warisan pura, tradisi sakral, dan kehidupan adat yang tetap terjaga secara turun-temurun.
             </p>
           </div>
         </section>
@@ -57,33 +39,20 @@ export default function AboutPage() {
             <h2 className="mt-3 text-3xl font-bold text-[#151515] md:text-4xl">Akar Sejarah yang Dalam</h2>
             <div className="mt-6 space-y-4 text-sm leading-relaxed text-[#3c3c3c] md:text-base">
               <p>
-                Desa Pujungan berkembang sejak abad ke-11 saat seorang resi dari Kerajaan Gelgel menemukan lokasi ini sebagai tempat bersemadi. Nama Pujungan berasal dari kata puja, yang bermakna sembahyang dan persembahan.
+                Desa Pujungan berada di Kecamatan Pupuan, Kabupaten Tabanan, Provinsi Bali, tepatnya di lereng barat daya Gunung Batukaru. Wilayahnya seluas sekitar 22,12 km2, didominasi sawah terasering, perkebunan kopi, dan hutan tropis. Letaknya berbatasan dengan Kabupaten Buleleng di utara, dengan akses sekitar dua jam perjalanan dari Denpasar maupun jalur Gilimanuk.
               </p>
               <p>
-                Sejak saat itu, wilayah ini menjadi pusat kegiatan keagamaan dengan banyak pura bersejarah yang memiliki nilai spiritual penting bagi masyarakat setempat.
+                Secara sosial, Pujungan terdiri dari enam banjar utama: Tamansari, Margasari, Mekarsari, Puspasari, Merthasari, dan Tibu Dalem yang berada di luar komplek desa. Sebagian besar masyarakat menggantungkan hidup pada sektor pertanian dan perkebunan yang menjadi fondasi ekonomi desa.
               </p>
               <p>
-                Hingga kini, tradisi adat dan upacara tetap dilaksanakan dengan khidmat sebagai warisan yang dijaga turun-temurun.
+                Sejarah Desa Pujungan hidup melalui tutur para sesepuh. Kisahnya berawal pada masa Kerajaan Bali Kuno sekitar abad ke-12, saat Raja Ida Sri Jaya Bali mengutus dua patih setianya, I Pasek Kayu Selem dan I Pasek Kerandan (I Pasek Auman), untuk membuka wilayah barat Bali. Setelah menempuh perjalanan panjang, mereka menetap di lereng Batukaru dan menamai wilayah itu Pujung atau Pujungan, yang dimaknai sebagai akhir perjalanan.
               </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-white py-16 lg:py-24">
-          <div className="mx-auto w-full max-w-7xl px-5 lg:px-8">
-            <p data-aos="fade-up" className="text-center text-xs font-semibold tracking-[0.2em] text-[#c68e51] uppercase">Nilai-Nilai</p>
-            <h2 data-aos="fade-up" data-aos-delay="100" className="mt-3 text-center text-3xl font-bold text-[#151515] md:text-4xl">Filosofi Hidup Kami</h2>
-
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {values.map((value, index) => (
-                <article data-aos="fade-up" data-aos-delay={String(index * 100)} key={value.title} className="bg-[#f8f3ec] p-6 shadow-sm">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center bg-[#c68e51] text-lg font-bold text-[#151515]">
-                    {index + 1}
-                  </div>
-                  <h3 className="text-xl font-semibold text-[#151515]">{value.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[#3c3c3c]">{value.description}</p>
-                </article>
-              ))}
+              <p>
+                Dalam perkembangan berikutnya, keturunan para patih membentuk masyarakat desa yang harmonis. Jejak sejarahnya masih dapat ditemukan melalui peninggalan seperti kulkul perunggu, guci kuno, tombak, genta, dan keris yang diwariskan lintas generasi. Secara administratif, Pujungan ditetapkan sebagai desa definitif pada 1 Oktober 1975 berdasarkan SK Bupati Tabanan Nomor Pem/II.a/1079/1975.
+              </p>
+              <p>
+                Hingga kini, kehidupan budaya dan spiritual tetap kuat dalam keseharian warga yang mayoritas beragama Hindu. Tradisi Dewa Yadnya Piodalan Besar di pura-pura utama, narat massal, serta praktik megangsingan terus dijaga. Di sisi lain, potensi alam seperti sawah terasering, kebun kopi Arabika, dan air terjun tersembunyi menjadikan Pujungan berkembang sebagai destinasi ekowisata yang tetap berakar pada adat.
+              </p>
             </div>
           </div>
         </section>
