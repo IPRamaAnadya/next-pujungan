@@ -6,6 +6,8 @@ import TempleMiniMapClient from "@/components/public/TempleMiniMapClient";
 import TempleImageSlider from "@/components/public/TempleImageSlider";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = "force-dynamic";
+
 type Params = {
   params: Promise<{ slug: string }>;
 };

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { PublicLayout } from "@/components/public/PublicLayout";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const temples = await prisma.temple.findMany({
     include: {
@@ -83,7 +85,7 @@ export default async function Home() {
                         alt={temple.name}
                         fill
                         sizes="(max-width: 1024px) 50vw, 33vw"
-                        className="object-cover transition duration-500 group-hover:scale-105"
+                        className="object-cover transition duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
                       />
                     ) : null}
                   </div>

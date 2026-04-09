@@ -2,6 +2,8 @@ import FullscreenTempleMapClient from "@/components/public/FullscreenTempleMapCl
 import { PublicLayout } from "@/components/public/PublicLayout";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = "force-dynamic";
+
 export default async function MapPage() {
 
   const temples = await prisma.temple.findMany({
