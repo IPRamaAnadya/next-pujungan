@@ -27,7 +27,7 @@ export default function AboutPage() {
         <section className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-16 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-24">
           <div data-aos="fade-right" className="relative h-80 overflow-hidden shadow-xl lg:h-[500px]">
             <Image
-              src="/images/history-carving.jpg"
+              src="/images/Pujungan.jpg"
               alt="Sejarah Desa Pujungan"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

@@ -43,7 +43,7 @@ export default async function Home() {
               </p>
               <div data-aos="fade-up" data-aos-delay="300" className="mt-8 flex flex-wrap gap-3">
                 <Link href="/map" className="bg-[#c68e51] px-6 py-3 text-sm font-semibold text-[#151515] transition hover:bg-[#b07d45]">
-                  Explore Temples
+                  Jelajahi Pura
                 </Link>
                 <Link href="/about" className="border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10">
                   Tentang Desa
@@ -57,7 +57,7 @@ export default async function Home() {
           <div className="mb-10 flex items-end justify-between gap-4">
             <div data-aos="fade-up">
               <p className="text-xs font-semibold tracking-[0.2em] text-[#c68e51] uppercase">Jelajahi</p>
-              <h2 className="mt-2 text-3xl font-bold md:text-4xl">Sacred Spaces</h2>
+              <h2 className="mt-2 text-3xl font-bold md:text-4xl">Pura Pujungan</h2>
             </div>
             <Link data-aos="fade-up" href="/map" className="text-sm font-semibold text-[#c68e51] hover:underline">
               Lihat semua di peta

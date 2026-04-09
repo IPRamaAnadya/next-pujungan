@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -54,8 +55,15 @@ export default function LoginPage() {
 
       <section className="relative z-10 w-full max-w-md border border-white/10 bg-white/5 p-8 backdrop-blur-lg md:p-10">
         <header className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center border border-[#c68e51]/70">
-            <span className="text-xl font-bold text-[#c68e51]">DP</span>
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-[#c68e51]/70 bg-white/90 p-1">
+            <Image
+              src="/apple-touch-icon.png"
+              alt="Logo Desa Pujungan"
+              width={56}
+              height={56}
+              className="h-14 w-14 object-contain"
+              priority
+            />
           </div>
           <h1 className="text-2xl font-bold text-white md:text-3xl">Desa Pujungan</h1>
           <p className="mt-2 text-sm text-white/60">Admin Panel Login</p>
