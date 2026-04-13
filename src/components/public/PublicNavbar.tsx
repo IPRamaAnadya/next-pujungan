@@ -17,7 +17,7 @@ export default function PublicNavbar() {
     <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#151515]/95 backdrop-blur">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 lg:px-8">
         <Link href="/" className="text-sm font-semibold tracking-[0.2em] text-[#c68e51] uppercase">
-          Desa Pujungan
+          Desa Adat Pujungan
         </Link>
 
         {/* Desktop nav */}

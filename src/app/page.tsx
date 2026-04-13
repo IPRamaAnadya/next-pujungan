@@ -38,10 +38,10 @@ export default async function Home() {
           <div className="relative mx-auto flex min-h-[80vh] w-full max-w-7xl items-center px-5 py-16 lg:px-8">
             <div className="max-w-3xl">
               <p data-aos="fade-up" className="text-xs font-semibold tracking-[0.25em] text-[#c68e51] uppercase">Welcome to</p>
-              <h1 data-aos="fade-up" data-aos-delay="100" className="mt-4 text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">Desa Pujungan</h1>
+              <h1 data-aos="fade-up" data-aos-delay="100" className="mt-4 text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">Desa Adat Pujungan</h1>
               <p data-aos="fade-up" data-aos-delay="150" className="mt-3 text-lg text-white/75">Pupuan, Tabanan, Bali</p>
               <p data-aos="fade-up" data-aos-delay="200" className="mt-6 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
-                Jelajahi warisan spiritual Desa Pujungan melalui pura-pura suci, kisah sejarah, dan peta lokasi untuk merencanakan perjalanan Anda.
+                Jelajahi warisan spiritual Desa Adat Pujungan melalui pura-pura suci, kisah sejarah, dan peta lokasi untuk merencanakan perjalanan Anda.
               </p>
               <div data-aos="fade-up" data-aos-delay="300" className="mt-8 flex flex-wrap gap-3">
                 <Link href="/map" className="bg-[#c68e51] px-6 py-3 text-sm font-semibold text-[#151515] transition hover:bg-[#b07d45]">

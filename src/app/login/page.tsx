@@ -112,15 +112,7 @@ export default function LoginPage() {
           </div>
 
           <div className="flex items-center justify-between text-sm">
-            <label className="inline-flex items-center gap-2 text-white/70">
-              <input
-                type="checkbox"
-                className="h-4 w-4 accent-[#c68e51]"
-                checked={rememberMe}
-                onChange={(event) => setRememberMe(event.target.checked)}
-              />
-              Ingat saya
-            </label>
+            
             <span className="text-white/40">Lupa password?</span>
           </div>
 
@@ -133,11 +125,7 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <div className="mt-6 border border-[#c68e51]/30 bg-[#c68e51]/10 p-4 text-center text-xs text-[#e6c29a]">
-          <p className="font-semibold">Demo Credentials</p>
-          <p className="mt-1">Email: admin@desapujungan.bali</p>
-          <p>Password: admin123</p>
-        </div>
+       
       </section>
     </main>
   );
