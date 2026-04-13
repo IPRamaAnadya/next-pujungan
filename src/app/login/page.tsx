@@ -57,8 +57,8 @@ export default function LoginPage() {
         <header className="mb-8 text-center">
           <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-[#c68e51]/70 bg-white/90 p-1">
             <Image
-              src="/apple-touch-icon.png"
-              alt="Logo Desa Pujungan"
+              src="/images/logo-desaadat.jpeg"
+              alt="Logo Desa Adat Pujungan"
               width={56}
               height={56}
               className="h-14 w-14 object-contain"
