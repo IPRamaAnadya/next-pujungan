@@ -20,7 +20,7 @@ export default async function DashboardAdminsPage() {
       title="Kelola Admin"
       subtitle="Fitur ini khusus akun dengan role ADMIN"
       actions={
-        <Link href="/dashboard/categories" className="rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm hover:bg-zinc-50">
+        <Link href="/dashboard/categories" className="rounded-md border border-zinc-300 bg-zinc-100 px-3 py-2 text-sm text-zinc-900 hover:bg-zinc-200">
           Kelola Kategori
         </Link>
       }

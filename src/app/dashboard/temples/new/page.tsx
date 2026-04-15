@@ -16,7 +16,7 @@ export default async function NewTemplePage() {
       title="Tambah Pura"
       subtitle="Input data pura baru beserta galeri gambar"
       actions={
-        <Link href="/dashboard/temples" className="rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm hover:bg-zinc-50">
+        <Link href="/dashboard/temples" className="rounded-md border border-zinc-300 bg-zinc-100 px-3 py-2 text-sm text-zinc-900 hover:bg-zinc-200">
           Kembali ke Daftar
         </Link>
       }

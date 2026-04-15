@@ -44,7 +44,7 @@ export default function DashboardNav() {
             key={item.href}
             href={item.href}
             onClick={() => setOpen(false)}
-            className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm hover:bg-zinc-50"
+            className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm text-zinc-900 hover:bg-zinc-50"
           >
             {item.label}
           </Link>
@@ -52,7 +52,7 @@ export default function DashboardNav() {
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm hover:bg-zinc-50"
+          className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm text-zinc-900 hover:bg-zinc-50"
         >
           Lihat Situs
         </Link>

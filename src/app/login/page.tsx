@@ -55,13 +55,13 @@ export default function LoginPage() {
 
       <section className="relative z-10 w-full max-w-md border border-white/10 bg-white/5 p-8 backdrop-blur-lg md:p-10">
         <header className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-[#c68e51]/70 bg-white/90 p-1">
+          <div className="mx-auto mb-4 flex items-center justify-center">
             <Image
-              src="/apple-touch-icon.png"
-              alt="Logo Desa Pujungan"
-              width={56}
-              height={56}
-              className="h-14 w-14 object-contain"
+              src="/images/Logo-adatpj.png"
+              alt="Logo Desa Adat Pujungan"
+              width={96}
+              height={96}
+              className="h-24 w-24 object-contain drop-shadow-lg"
               priority
             />
           </div>
@@ -112,15 +112,7 @@ export default function LoginPage() {
           </div>
 
           <div className="flex items-center justify-between text-sm">
-            <label className="inline-flex items-center gap-2 text-white/70">
-              <input
-                type="checkbox"
-                className="h-4 w-4 accent-[#c68e51]"
-                checked={rememberMe}
-                onChange={(event) => setRememberMe(event.target.checked)}
-              />
-              Ingat saya
-            </label>
+            
             <span className="text-white/40">Lupa password?</span>
           </div>
 
@@ -133,11 +125,7 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <div className="mt-6 border border-[#c68e51]/30 bg-[#c68e51]/10 p-4 text-center text-xs text-[#e6c29a]">
-          <p className="font-semibold">Demo Credentials</p>
-          <p className="mt-1">Email: admin@desapujungan.bali</p>
-          <p>Password: admin123</p>
-        </div>
+       
       </section>
     </main>
   );

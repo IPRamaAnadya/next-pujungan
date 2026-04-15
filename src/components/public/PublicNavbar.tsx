@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const navItems = [
@@ -16,8 +17,15 @@ export default function PublicNavbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#151515]/95 backdrop-blur">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 lg:px-8">
-        <Link href="/" className="text-sm font-semibold tracking-[0.2em] text-[#c68e51] uppercase">
-          Desa Pujungan
+        <Link href="/" className="flex items-center gap-3 text-sm font-semibold tracking-[0.2em] text-[#c68e51] uppercase">
+          <Image
+            src="/images/Logo-adatpj.png"
+            alt="Logo Desa Adat Pujungan"
+            width={48}
+            height={48}
+            className="h-12 w-12 object-contain drop-shadow-md"
+          />
+          Desa Adat Pujungan
         </Link>
 
         {/* Desktop nav */}

@@ -8,7 +8,7 @@ export default function AboutPage() {
         <section className="relative isolate overflow-hidden bg-[#151515] py-20 lg:py-28">
           <Image
             src="/images/hero-temple.jpg"
-            alt="Desa Pujungan"
+            alt="Desa Adat Pujungan"
             fill
             sizes="100vw"
             className="object-cover opacity-30"
@@ -17,7 +17,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#151515]/80 via-[#151515]/90 to-[#151515]" />
           <div className="relative mx-auto w-full max-w-7xl px-5 lg:px-8">
             <p data-aos="fade-up" className="text-xs font-semibold tracking-[0.2em] text-[#c68e51] uppercase">Tentang Kami</p>
-            <h1 data-aos="fade-up" data-aos-delay="100" className="mt-4 max-w-3xl text-4xl font-bold text-white md:text-5xl lg:text-6xl">Desa Pujungan</h1>
+            <h1 data-aos="fade-up" data-aos-delay="100" className="mt-4 max-w-3xl text-4xl font-bold text-white md:text-5xl lg:text-6xl">Desa Adat Pujungan</h1>
             <p data-aos="fade-up" data-aos-delay="200" className="mt-6 max-w-3xl text-base leading-relaxed text-white/75 md:text-lg">
              Desa Adat Pujungan terletak di lereng Gunung Batukaru dengan warisan pura, tradisi sakral, dan kehidupan adat yang tetap terjaga secara turun-temurun.
             </p>
