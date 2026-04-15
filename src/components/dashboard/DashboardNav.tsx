@@ -9,6 +9,7 @@ const navItems = [
   { href: "/dashboard/temples", label: "Kelola Pura" },
   { href: "/dashboard/categories", label: "Kategori" },
   { href: "/dashboard/admins", label: "Admin" },
+  { href: "/dashboard/settings", label: "Pengaturan" },
 ];
 
 export default function DashboardNav() {

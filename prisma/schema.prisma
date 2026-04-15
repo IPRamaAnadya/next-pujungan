@@ -66,3 +66,9 @@ model TempleImage {
 
   @@index([templeId, sortOrder])
 }
+
+model Site {
+  id             String   @id @default("singleton")
+  whatsappNumber String?
+  updatedAt      DateTime @updatedAt
+}
